@@ -1,4 +1,4 @@
-<p align="center"> <img src="resources/logo.png" alt="GenAI H&PS" width="100%" style="max-width: 80px; max-height: 80px;"/></p>
+<p align="center"> <img src="resources/logo.png" alt="GenAI H&PS" style="max-width: 80px; max-height: 80px;"/></p>
 
 ---
 
