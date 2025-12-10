@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 5: jQuery → React</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>Lista de Tareas</h2>
+        
+        <div class="add-task-form">
+            <input type="text" id="taskInput" placeholder="Nueva tarea...">
+            <button id="addTaskBtn">Agregar</button>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="active">Activas</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+        
+        <ul id="taskList"></ul>
+        
+        <div class="stats">
+            <span id="taskCount">0</span> tareas pendientes
+        </div>
+    </div>
+
+    <script>
+        // jQuery Todo App - Convierte esto a React
+        $(document).ready(function() {
+            let tasks = [];
+            let currentFilter = 'all';
+            let nextId = 1;
+            
+            // Add task
+            $('#addTaskBtn').on('click', function() {
+                const taskText = $('#taskInput').val().trim();
+                
+                if (taskText === '') {
+                    alert('Por favor ingresa una tarea');
+                    return;
+                }
+                
+                const newTask = {
+                    id: nextId++,
+                    text: taskText,
+                    completed: false,
+                    createdAt: new Date().toISOString()
+                };
+                
+                tasks.push(newTask);
+                $('#taskInput').val('');
+                renderTasks();
+                updateStats();
+            });
+            
+            // Enter key to add task
+            $('#taskInput').on('keypress', function(e) {
+                if (e.which === 13) {
+                    $('#addTaskBtn').click();
+                }
+            });
+            
+            // Filter buttons
+            $('.filter-btn').on('click', function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                currentFilter = $(this).data('filter');
+                renderTasks();
+            });
+            
+            // Toggle task completion (delegated event)
+            $('#taskList').on('click', '.task-checkbox', function() {
+                const taskId = parseInt($(this).closest('li').data('id'));
+                const task = tasks.find(t => t.id === taskId);
+                
+                if (task) {
+                    task.completed = !task.completed;
+                    renderTasks();
+                    updateStats();
+                }
+            });
+            
+            // Delete task (delegated event)
+            $('#taskList').on('click', '.delete-btn', function() {
+                const taskId = parseInt($(this).closest('li').data('id'));
+                tasks = tasks.filter(t => t.id !== taskId);
+                renderTasks();
+                updateStats();
+            });
+            
+            // Edit task (delegated event)
+            $('#taskList').on('dblclick', '.task-text', function() {
+                const $li = $(this).closest('li');
+                const taskId = parseInt($li.data('id'));
+                const task = tasks.find(t => t.id === taskId);
+                
+                const newText = prompt('Editar tarea:', task.text);
+                
+                if (newText !== null && newText.trim() !== '') {
+                    task.text = newText.trim();
+                    renderTasks();
+                }
+            });
+            
+            function renderTasks() {
+                const filteredTasks = getFilteredTasks();
+                
+                $('#taskList').empty();
+                
+                filteredTasks.forEach(function(task) {
+                    const $li = $('<li>')
+                        .attr('data-id', task.id)
+                        .addClass(task.completed ? 'completed' : '');
+                    
+                    const $checkbox = $('<input>')
+                        .attr('type', 'checkbox')
+                        .addClass('task-checkbox')
+                        .prop('checked', task.completed);
+                    
+                    const $text = $('<span>')
+                        .addClass('task-text')
+                        .text(task.text)
+                        .attr('title', 'Doble click para editar');
+                    
+                    const $deleteBtn = $('<button>')
+                        .addClass('delete-btn')
+                        .text('×');
+                    
+                    $li.append($checkbox, $text, $deleteBtn);
+                    $('#taskList').append($li);
+                });
+                
+                if (filteredTasks.length === 0) {
+                    $('#taskList').append('<li class="empty">No hay tareas para mostrar</li>');
+                }
+            }
+            
+            function getFilteredTasks() {
+                switch(currentFilter) {
+                    case 'active':
+                        return tasks.filter(t => !t.completed);
+                    case 'completed':
+                        return tasks.filter(t => t.completed);
+                    default:
+                        return tasks;
+                }
+            }
+            
+            function updateStats() {
+                const activeCount = tasks.filter(t => !t.completed).length;
+                $('#taskCount').text(activeCount);
+            }
+            
+            // Load from localStorage
+            function loadTasks() {
+                const saved = localStorage.getItem('tasks');
+                if (saved) {
+                    tasks = JSON.parse(saved);
+                    nextId = Math.max(...tasks.map(t => t.id), 0) + 1;
+                    renderTasks();
+                    updateStats();
+                }
+            }
+            
+            // Save to localStorage
+            function saveTasks() {
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            }
+            
+            // Auto-save on changes
+            setInterval(saveTasks, 1000);
+            
+            // Initial load
+            loadTasks();
+        });
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .add-task-form {
+            margin-bottom: 20px;
+        }
+        
+        #taskInput {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .filters {
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            margin-right: 10px;
+        }
+        
+        .filter-btn.active {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        #taskList {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #taskList li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        #taskList li.completed .task-text {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .task-text {
+            flex-grow: 1;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+        
+        .empty {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+        }
+        
+        .stats {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</body>
+</html>

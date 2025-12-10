@@ -1,3 +1,5 @@
+<p align="center"> <img src="../../resources/logo.png" alt="GenAI H&PS" style="width: 80px; height: 80px;"/></p>
+
 # 📝 Notas y Mejores Prácticas - Autocompletado Inteligente
 
 ## 🎯 Tips para Maximizar el Autocompletado

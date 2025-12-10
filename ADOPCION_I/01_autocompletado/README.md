@@ -1,3 +1,6 @@
+<p align="center"> <img src="../../resources/logo.png" alt="GenAI H&PS" style="width: 80px; height: 80px;"/></p>
+
+
 # Píldora 1: Tu Primer Asistente de Código - Autocompletado Inteligente 🚀
 
 ## 📋 Descripción

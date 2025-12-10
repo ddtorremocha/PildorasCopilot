@@ -83,7 +83,7 @@ Revisar [Requisitos Previos](requisitos-previos.md).
 ## 📖 Cómo Usar Este Repositorio
 
 ### 1️⃣ Ruta de Aprendizaje Recomendada
-Se recomienda seguir las píldoras en orden secuencial, ya que cada nivel construye sobre el anterior:
+Vamos a seguir las píldoras en orden secuencial, ya que cada nivel construye sobre el anterior:
 
 ```
 ADOPCIÓN I (Básico) → ADOPCIÓN II (Intermedio) → ADOPCIÓN III (Avanzado)
