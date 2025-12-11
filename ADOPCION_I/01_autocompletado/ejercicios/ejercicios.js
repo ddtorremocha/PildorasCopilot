@@ -22,6 +22,9 @@
 
 
 // TODO: Función para validar longitud de contraseña (mínimo 8 caracteres)
+function validatePasswordLength(password) {
+    return password.length >= 8;
+}
 
 
 // Ejercicio 1.2: Formateo
