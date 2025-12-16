@@ -8,13 +8,6 @@ from datetime import datetime
 
 # Ejemplo 1: Validación de email (buscado en Stack Overflow)
 def validate_email(email):
-    # Después de buscar "python email validation regex"
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    if re.match(pattern, email):
-        return True
-    return False
-
-def validate_email(email):
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     if re.match(pattern, email):
         return True

@@ -18,7 +18,27 @@ Bienvenido a la serie completa de **Píldoras Formativas** diseñadas para demos
 
 ## 🎯 Estructura del Curso
 
-Este curso está dividido en **tres niveles de adopción** con un total de **16 píldoras formativas**:
+Este curso está dividido en **cuatro fases de adopción**, comenzando con la instalación y configuración, seguido de **tres niveles progresivos** con un total de **16 píldoras formativas**:
+
+### ⚙️ ADOPCIÓN 0 - Instalación y Configuración
+**Prerequisito obligatorio** antes de comenzar con las píldoras formativas.
+
+| Módulo | Descripción | Carpeta |
+|--------|-------------|---------|
+| 🔧 | **Instalación y Configuración** | [📁 ADOPCION_0](./ADOPCION_0/) |
+
+**Incluye:**
+- ✅ Guía completa de instalación de GitHub Copilot en VS Code
+- ✅ Proceso de autenticación paso a paso
+- ✅ Verificación de funcionamiento (autocompletado, chat, inline chat)
+- ✅ Configuración básica y avanzada
+- ✅ Atajos de teclado esenciales
+- ✅ **[Checklist interactiva](./ADOPCION_0/CHECKLIST.md)** para verificar instalación
+- ✅ **[Guía de solución de problemas](./ADOPCION_0/TROUBLESHOOTING.md)** completa
+
+⏱️ **Tiempo estimado**: 30-45 minutos
+
+---
 
 ### 🟢 ADOPCIÓN I - Nivel Básico (5 píldoras)
 Introduce las capacidades fundamentales de Copilot para mejorar la productividad diaria.
@@ -58,6 +78,21 @@ Explora capacidades enterprise y de arquitectura para equipos maduros.
 
 ## ✅ Requisitos Previos
 
+### 🚨 Paso Obligatorio: ADOPCIÓN 0
+**Antes de comenzar con las píldoras, debes completar la fase ADOPCIÓN 0:**
+
+👉 **[Ir a ADOPCIÓN 0 - Instalación y Configuración](./ADOPCION_0/README.md)**
+
+Esta fase incluye:
+- Instalación de GitHub Copilot en VS Code
+- Autenticación con tu cuenta de GitHub
+- Verificación de que todo funciona correctamente
+- Configuración inicial optimizada
+
+**No continúes sin completar ADOPCIÓN 0**, ya que todas las píldoras requieren que Copilot esté instalado y funcionando.
+
+---
+
 ### Software Necesario
 - **Visual Studio Code** (última versión)
 - **GitHub Copilot** (extensión instalada y activa)
@@ -82,11 +117,12 @@ Revisar [Requisitos Previos](requisitos-previos.md).
 
 ## 📖 Cómo Usar Este Repositorio
 
+
 ### 1️⃣ Ruta de Aprendizaje Recomendada
 Vamos a seguir las píldoras en orden secuencial, ya que cada nivel construye sobre el anterior:
 
 ```
-ADOPCIÓN I (Básico) → ADOPCIÓN II (Intermedio) → ADOPCIÓN III (Avanzado)
+ADOPCIÓN 0 (Instalación) → ADOPCIÓN I (Básico) → ADOPCIÓN II (Intermedio) → ADOPCIÓN III (Avanzado)
 ```
 
 ### 2️⃣ Estructura de Cada Píldora
@@ -111,56 +147,12 @@ Cada píldora sigue este formato:
 5. **Desafíos**: Ejercicios adicionales para profundizar
 
 ### 4️⃣ Tiempo Estimado
+- **ADOPCIÓN 0 (Instalación)**: 30-45 minutos
 - **Píldoras Nivel I**: 15-20 minutos cada una
 - **Píldoras Nivel II**: 25-30 minutos cada una
 - **Píldoras Nivel III**: 35-45 minutos cada una
-- **Curso Completo**: ~8 horas (distribuido en sesiones)
+- **Curso Completo**: ~9 horas (distribuido en sesiones)
 
----
-
-## 🎓 Niveles de Adopción
-
-### 🟢 ADOPCIÓN I - Básico
-**Objetivo**: Familiarizarse con las capacidades fundamentales de Copilot.
-
-**Perfil**: Desarrolladores que recién comienzan con IA generativa o equipos explorando adopción inicial.
-
-**Beneficios Clave**:
-- ✅ Reducción inmediata en tiempo de escritura de código
-- ✅ Menos búsquedas en documentación
-- ✅ Mejora en documentación sin esfuerzo adicional
-- ✅ Comprensión más rápida de código legacy
-
-### 🟡 ADOPCIÓN II - Intermedio
-**Objetivo**: Integrar Copilot en workflows profesionales de desarrollo.
-
-**Perfil**: Desarrolladores con experiencia en Copilot básico, listos para casos de uso más complejos.
-
-**Beneficios Clave**:
-- ✅ Cobertura de tests superior con menos esfuerzo
-- ✅ Código más limpio y mantenible
-- ✅ Desarrollo de APIs y servicios acelerado
-- ✅ Integraciones externas más rápidas y robustas
-
-### 🔴 ADOPCIÓN III - Avanzado
-**Objetivo**: Aprovechar capacidades enterprise de Copilot para transformación organizacional.
-
-**Perfil**: Equipos maduros buscando maximizar ROI y establecer estándares enterprise.
-
-**Beneficios Clave**:
-- ✅ Análisis y planificación de proyectos asistida
-- ✅ Automatización completa de testing
-- ✅ Calidad de código consistente en todo el equipo
-- ✅ Optimización proactiva de rendimiento
-
----
-
-## 🤝 Contribuciones
-
-Este es un repositorio de aprendizaje. Si encuentras mejoras o tienes sugerencias:
-1. Abre un **Issue** para discutir cambios
-2. Haz un **Fork** del repositorio
-3. Crea un **Pull Request** con tus mejoras
 
 ---
 
@@ -176,18 +168,4 @@ Este es un repositorio de aprendizaje. Si encuentras mejoras o tienes sugerencia
 
 ---
 
-## 📜 Licencia
 
-Este repositorio es material educativo diseñado para demostrar capacidades de GitHub Copilot.
-
----
-
-## 🚀 ¡Comienza Ahora!
-
-¿Listo para transformar tu forma de desarrollar software?
-
-👉 **Empieza con**: [Píldora 1 - Autocompletado Inteligente](./ADOPCION_I/01_autocompletado/)
-
----
-
-**¡Feliz coding con GitHub Copilot! 🎉**
