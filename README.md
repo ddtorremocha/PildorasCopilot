@@ -115,47 +115,6 @@ Revisar [Requisitos Previos](requisitos-previos.md).
 
 ---
 
-## 📖 Cómo Usar Este Repositorio
-
-
-### 1️⃣ Ruta de Aprendizaje Recomendada
-Vamos a seguir las píldoras en orden secuencial, ya que cada nivel construye sobre el anterior:
-
-```
-ADOPCIÓN 0 (Instalación) → ADOPCIÓN I (Básico) → ADOPCIÓN II (Intermedio) → ADOPCIÓN III (Avanzado)
-```
-
-### 2️⃣ Estructura de Cada Píldora
-Cada carpeta de píldora contiene:
-
-```
-📁 XX_nombre_pildora/
-├── 📄 README.md           # Guía completa de la píldora
-├── 📁 ejemplo_antes/      # Código "tradicional" sin Copilot
-├── 📁 ejemplo_despues/    # Código con asistencia de Copilot
-├── 📁 ejercicios/         # Ejercicios prácticos para realizar
-└── 📄 NOTAS.md           # Tips y mejores prácticas
-```
-
-### 3️⃣ Metodología de Trabajo
-Cada píldora sigue este formato:
-
-1. **Contexto**: Presenta el problema tradicional
-2. **Demostración**: Muestra cómo Copilot lo resuelve
-3. **Ventajas**: Explica los beneficios de adopción
-4. **Práctica Guiada**: Ejercicios paso a paso
-5. **Desafíos**: Ejercicios adicionales para profundizar
-
-### 4️⃣ Tiempo Estimado
-- **ADOPCIÓN 0 (Instalación)**: 30-45 minutos
-- **Píldoras Nivel I**: 15-20 minutos cada una
-- **Píldoras Nivel II**: 25-30 minutos cada una
-- **Píldoras Nivel III**: 35-45 minutos cada una
-- **Curso Completo**: ~9 horas (distribuido en sesiones)
-
-
----
-
 ## 📞 Soporte y Recursos
 
 ### Documentación Oficial
